@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #ffc9c9); /* fallback */
+    background-image: url("images/pike_house.jpg");
+    background-size: cover;         /* make image fill the screen */
+    background-repeat: no-repeat;   /* prevent tiling */
+    background-position: center;    /* center the image */
+    position: relative;
+    color: #333;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("images/pike_house.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1; /* put it behind everything */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Change the gradient colors here */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(100, 0, 0, 0.4));
+    z-index: -1;
+}
+
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px; 
+    min-width: 400px;
+}
+
+.form-box.active {
+    display: block;
+}
+
+.form-box .logo {
+    width: 100px;
+    height: auto;
+    position: absolute; /* Position relative to the form box */
+    bottom: 10px; /* Moves the logo to the bottom, adjust as needed */
+    left: 50%; /* Centers the logo horizontally */
+    transform: translateX(-50%); /* Ensures the logo is perfectly centered */
+    z-index: 2; /* Ensures the logo is in front of other content */
+}
+
+.form-box.register-box {
+    min-height: 500px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.form-text {
+    text-align: center;
+    margin-bottom: 60px; /* adjust to make it look vertically balanced with logo */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #eee;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size:16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #7c1e1e;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size:16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #5e1616;
+}
+
+button:active {
+    background: rgb(87, 17, 17);
+    color: #cfcece;
+    transition: .2s;
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a {
+    color: #7c1e1e;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+p a:active {
+    color: #b35151;
+}
+
+.error-message {
+    padding: 12px;
+    background: #f8d7da;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #a42834;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+span {
+    color: #7c1e1e;
+}
+
+.box .p {
+    font-size: 22px;   
+
+}
+
+
+.box button {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.user-form-box {
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    position: relative;
+    margin: 50px auto; /* Centers the box vertically and horizontally */
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 600px;
+}
+
+.user-form-box h1 {
+    margin-bottom: 20px;
+}
+
+.user-form-box p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.user-form-box .logout-btn {
+    width: 100px;
+    padding: 5px 10px;
+    background-color: #7c1e1e; /* Blue background for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 16px;
+    left: 40px;
+}
+
+.user-form-box .logout-btn:hover {
+    background-color: #691818; /* Darker blue on hover */
+}
+
+.user-form-box .logout-btn:active {
+    background-color: #581212; /* Darker blue on hover */
+    color: #cfcece;
+    transition: .2s;
+}
+
+.user-form-box .next-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 40px;
+    width: 100px;
+    padding: 5px 10px;
+    background-color: #D4AF37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.user-form-box .next-btn:hover {
+    background-color: #c4a131;
+}
+
+.user-form-box .next-btn:active {
+    background-color: #ad8e29;
+    color: #cfcece;
+    transition: .2s;
+}
+
+.user-form-box .user_logo {
+    width: 100px;
+    height: auto;
+    position: absolute; /* Position relative to the form box */
+    bottom: 30px; /* Moves the logo to the bottom, adjust as needed */
+    left: 50%; /* Centers the logo horizontally */
+    transform: translateX(-50%); /* Ensures the logo is perfectly centered */
+    z-index: 2; /* Ensures the logo is in front of other content */
+}
+
+/*
+HOMEPAGE
+*/
+
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .slideshow img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;           /* Keeps images from stretching */
+    object-position: center;
+    opacity: 0;
+    animation: fade 40s infinite;
+    filter: blur(8px);
+    transition: opacity .01s ease-in-out;
+  }
+
+  .slideshow img:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .slideshow img:nth-child(2) {
+    animation-delay: 10s;
+  }
+
+  .slideshow img:nth-child(3) {
+    animation-delay: 20s;
+  }
+
+  .slideshow img:nth-child(4) {
+    animation-delay: 30s;
+}
+
+  @keyframes fade {
+    0%   { opacity: 0; }
+    10%   { opacity: 1; }
+    25%  { opacity: 1; }
+    35%  { opacity: 1; }
+    45%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* 🌟 Main Content Styling */
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+  }
+
